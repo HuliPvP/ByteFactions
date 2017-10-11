@@ -8,12 +8,11 @@ import org.projectbyte.factions.util.commandapi.CommandArgs;
 
 public class FactionCommand {
 	
-	public ByteFactions plugin;
+	public ByteFactions plugin = ByteFactions.getInstance();
 	
-	public FactionCommand(ByteFactions plugin) {
-		this.plugin = plugin;
-		this.plugin.getCommandFramework().registerCommands(this);
-		this.plugin.getCommandFramework().registerHelp();
+	public FactionCommand() {
+		plugin.getCommandFramework().registerCommands(this);
+		plugin.getCommandFramework().registerHelp();
 	}
 	
 	@Command(name = "faction", description = "The main command for Factions", aliases = { "f", "t", "s", "team", "squad" }, usage = "/<command> <args>")

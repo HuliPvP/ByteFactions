@@ -22,8 +22,10 @@ public class Claim {
 	
 	private Faction owner;
 	
+	private boolean deathBan;
+	
 	/**
-	 * Returns <tt>true</tt> if the provided Location is inside the claim.
+	 * Returns <tt>true</tt> if the provided Location is inside the claim.<br>
 	 * However, it returns <tt>false</tt> if the provided Location is not inside the claim
 	 * 
 	 * @param location - the Location in which you wish to see is inside the claim
@@ -36,7 +38,7 @@ public class Claim {
 	}
 	
 	/**
-	 * Returns <tt>true</tt> if the Player's location is inside the claim.
+	 * Returns <tt>true</tt> if the Player's location is inside the claim.<br>
 	 * However, it returns <tt>false</tt> if the Player's location is not inside the claim
 	 * <p>
 	 * It's just a faster way instead of doing {@link isInsideClaim(player.getLocation)}

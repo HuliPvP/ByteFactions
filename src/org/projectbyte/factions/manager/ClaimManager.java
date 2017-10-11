@@ -49,7 +49,7 @@ public class ClaimManager {
 	}
 	
 	/**
-	 * Attempts to find a claim with the same owner Faction as the provided Faction
+	 * Attempts to find a claim with the same owner Faction as the provided Faction<br>
 	 * Will return <tt>null</tt> if no Claim with the same owner Faction is not found
 	 * 
 	 * @param owner - the Faction you wish to see has a claim
@@ -61,6 +61,15 @@ public class ClaimManager {
 	}
 	
 	/**
+	 * Adds a Claim to the <tt>Set</tt> of claims if the Claim is already created
+	 * 
+	 * @param claim - the Claim you wish to store
+	 */
+	public void addClaim(Claim claim) {
+		claims.add(claim);
+	}
+	
+	/**
 	 * Instantiates a new claim and then stores it to the <tt>Set</tt>
 	 * 
 	 * @param id - the UUID of the claim
@@ -68,8 +77,8 @@ public class ClaimManager {
 	 * @param cornerTwo - the second corner Location of the claim
 	 * @param owner - the owner Faction of the claim
 	 */
-	public void addClaim(UUID id, Location cornerOne, Location cornerTwo, Faction owner) {
-		claims.add(new Claim(id, cornerOne, cornerTwo, owner));
+	public void addClaim(UUID id, Location cornerOne, Location cornerTwo, Faction owner, boolean deathBan) {
+		claims.add(new Claim(id, cornerOne, cornerTwo, owner, deathBan));
 	}
 	
 	

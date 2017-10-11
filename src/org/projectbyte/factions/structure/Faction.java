@@ -54,8 +54,8 @@ public abstract class Faction {
 	 * @param cornerOne - the first corner Location of the Claim
 	 * @param cornerTwo - the second corner Location of the Claim
 	 */
-	public void addClaim(UUID id, Location cornerOne, Location cornerTwo) {
-		claims.add(new Claim(id, cornerOne, cornerTwo, this));
+	public void addClaim(UUID id, Location cornerOne, Location cornerTwo, boolean deathBan) {
+		claims.add(new Claim(id, cornerOne, cornerTwo, this, deathBan));
 	}
 	
 	/**

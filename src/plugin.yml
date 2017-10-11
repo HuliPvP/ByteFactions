@@ -1,0 +1,5 @@
+name: ByteFactions
+version: 1.0.0
+author: HuliPvP
+main: org.projectbyte.factions.ByteFactions
+description: A Hardcore Factions plugin created by ProjectByte with efficiency in mind.

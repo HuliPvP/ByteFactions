@@ -32,16 +32,18 @@ public class Claim {
 	 * @return boolean - Whether or not the provided Location is inside the claim or not
 	 */
 	public boolean isInsideClaim(Location location) {
-		return (location.getX() > Math.min(cornerOne.getX(), cornerTwo.getX())) && (location.getY() > Math.min(cornerOne.getY(), cornerTwo.getY()))
-				&& (location.getZ() > Math.min(cornerOne.getZ(), cornerTwo.getZ())) && (location.getX() < Math.max(cornerOne.getX(), cornerTwo.getX()))
-				&& (location.getY() < Math.max(cornerOne.getY(), cornerTwo.getY())) && (location.getZ() < Math.max(cornerOne.getZ(), cornerTwo.getZ()));
+		return (location.getX() >= Math.min(cornerOne.getX(), cornerTwo.getX()))
+				&& (location.getZ() >= Math.min(cornerOne.getZ(), cornerTwo.getZ()))
+				&& (location.getX() <= Math.max(cornerOne.getX(), cornerTwo.getX()))
+				&& (location.getZ() <= Math.max(cornerOne.getZ(), cornerTwo.getZ()));
 	}
 	
 	/**
 	 * Returns <tt>true</tt> if the Player's location is inside the claim.<br>
 	 * However, it returns <tt>false</tt> if the Player's location is not inside the claim
 	 * <p>
-	 * It's just a faster way instead of doing {@link isInsideClaim(player.getLocation)}
+	 * It's just a faster way instead of doing {@link isInsideClaim(player.getLocation)}, cuz
+	 * I'm just that lazy
 	 * 
 	 * @param player - the Player in which you wish to see is inside the claim
 	 * @return boolean - Whether or not the player's location is inside the claim or not

@@ -44,7 +44,7 @@ public abstract class Faction {
 	 * @param claim - a Claim you wish to add to the Faction
 	 */
 	public void addClaim(Claim claim) {
-		claims.add(claim);
+		this.claims.add(claim);
 	}
 	
 	/**
@@ -55,7 +55,7 @@ public abstract class Faction {
 	 * @param cornerTwo - the second corner Location of the Claim
 	 */
 	public void addClaim(UUID id, Location cornerOne, Location cornerTwo, boolean deathBan) {
-		claims.add(new Claim(id, cornerOne, cornerTwo, this, deathBan));
+		this.claims.add(new Claim(id, cornerOne, cornerTwo, this, deathBan));
 	}
 	
 	/**
@@ -64,7 +64,7 @@ public abstract class Faction {
 	 * @param claim - the Claim you wish to remove
 	 */
 	public void removeClaim(Claim claim) {
-		claims.remove(claim);
+		this.claims.remove(claim);
 	}
 	
 	/**

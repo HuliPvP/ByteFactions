@@ -25,6 +25,15 @@ public class FactionManager {
 	}
 	
 	/**
+	 * Get the <tt>Set</tt> of all the Factions
+	 * 
+	 * @return Set - the Set of all the Factions loaded onto the server
+	 */
+	public Set<Faction> getAllFactions() {
+		return factions;
+	}
+	
+	/**
 	 * Get all of the loaded PlayerFactions on the server.<br>
 	 * Will return an empty <tt>Set</tt> if no PlayerFactions are found
 	 * 

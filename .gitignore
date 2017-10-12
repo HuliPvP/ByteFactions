@@ -76,3 +76,5 @@ ehthumbs.db
 Thumbs.db
 
 bin/plugin.yml
+
+bin/lang.yml

@@ -17,17 +17,16 @@ public class PlayerMoveListener implements Listener {
 	public void onMove(PlayerMoveEvent event) {
 		Location to = event.getTo();
 		Location from = event.getFrom();
-		if (to.getBlockX() != from.getBlockX() || to.getBlockY() != from.getBlockY() || to.getBlockZ() != from.getBlockZ()) {
-			return;
-		}
-		Player player = event.getPlayer();
-		Claim newClaim = ByteFactions.getInstance().getClaimManager().getClaimAt(to);
-		Claim oldClaim = ByteFactions.getInstance().getClaimManager().getClaimAt(from);
-		if (newClaim != null) {
-			Bukkit.getPluginManager().callEvent(new PlayerEnterClaimEvent(player, newClaim));
-		}
-		if (oldClaim != null) {
-			Bukkit.getPluginManager().callEvent(new PlayerLeaveClaimEvent(player, oldClaim));
+		if (to.getBlockX() != from.getBlockX() || to.getBlockZ() != from.getBlockZ()) {
+			Player player = event.getPlayer();
+			Claim newClaim = ByteFactions.getInstance().getClaimManager().getClaimAt(to);
+			Claim oldClaim = ByteFactions.getInstance().getClaimManager().getClaimAt(from);
+			if (newClaim != null) {
+				Bukkit.getPluginManager().callEvent(new PlayerEnterClaimEvent(player, newClaim));
+			}
+			if (oldClaim != null) {
+				Bukkit.getPluginManager().callEvent(new PlayerLeaveClaimEvent(player, oldClaim));
+			}
 		}
 	}
 

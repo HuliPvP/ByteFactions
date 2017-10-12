@@ -5,7 +5,10 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.projectbyte.factions.structure.Faction;
@@ -66,6 +69,27 @@ public class PlayerFaction extends Faction {
 		// TODO: send show message
 	}
 	
+	/**
+	 * Get's a <tt>Set</tt> of UUIDs of all the online players on the server<br>
+	 * Will return an empty <tt>Set</tt> if there no online players found
+	 * 
+	 * @return Set - a Set of UUIDs of all online players in the Faction
+	 */
+	public Set<UUID> getOnlinePlayers() {
+		return this.members.keySet().stream().filter(uuid -> Bukkit.getPlayer(uuid) != null).collect(Collectors.toSet());
+	}
 	
+	/**
+	 * Sends the provided message to all online players in the Faction<br>
+	 * Automatically translates the color codes so you don't need to when you call the method
+	 * 
+	 * @param message - the Message you wish to send to all the online players
+	 */
+	public void sendMessage(String message) {
+		this.getOnlinePlayers().stream().forEach(uuid -> {
+			Player player = Bukkit.getPlayer(uuid);
+			player.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
+		});
+	}
 
 }

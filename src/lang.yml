@@ -1,0 +1,6 @@
+FACTION:
+  CREATE: '&eTeam &9%faction% &ehas been created by &a%player%'
+  DISBAND: '&eTeam &9%faction% &ehas been disbanded by &a%player%'
+CLAIM:
+  ENTER_CLAIM: '&eNow entering: %color%%faction%&7(%deathBan_color%%deathBan_status%&7)'
+  LEAVE_CLAIM: '&eNow leaving: %color%%faction%&7(%deathBan_color%%deathBan_status%&7)'

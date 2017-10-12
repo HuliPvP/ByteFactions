@@ -76,6 +76,7 @@ public class ClaimManager {
 	 * @param cornerOne - the first corner Location of the claim
 	 * @param cornerTwo - the second corner Location of the claim
 	 * @param owner - the owner Faction of the claim
+	 * @param deathBan - whether or not the Claim should be a deathban claim
 	 */
 	public void addClaim(UUID id, Location cornerOne, Location cornerTwo, Faction owner, boolean deathBan) {
 		claims.add(new Claim(id, cornerOne, cornerTwo, owner, deathBan));

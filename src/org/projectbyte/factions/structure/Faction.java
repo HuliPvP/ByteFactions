@@ -53,6 +53,7 @@ public abstract class Faction {
 	 * @param id - the UUID of the claim
 	 * @param cornerOne - the first corner Location of the Claim
 	 * @param cornerTwo - the second corner Location of the Claim
+	 * @param deathBan - whether or not the Claim should be a deathban claim
 	 */
 	public void addClaim(UUID id, Location cornerOne, Location cornerTwo, boolean deathBan) {
 		this.claims.add(new Claim(id, cornerOne, cornerTwo, this, deathBan));

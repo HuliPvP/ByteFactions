@@ -5,6 +5,8 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.projectbyte.factions.structure.Faction;
 import org.projectbyte.factions.structure.claim.Claim;
 import org.projectbyte.factions.structure.type.PlayerFaction;
@@ -84,6 +86,17 @@ public class FactionManager {
 	}
 	
 	/**
+	 * Get a <tt>Faction</tt> by searching if the provided location is inside one of
+	 * Faction's claims
+	 * 
+	 * @param location - the Location of the Faction you wish to search for
+	 * @return Faction - a Faction which on of their Claims contains the provided location
+	 */
+	public Faction getFactionByLocation(Location location) {
+		return factions.stream().filter(faction -> faction.getClaims().stream().filter(claim -> claim.isInsideClaim(location)).collect(Collectors.toList()).size() >= 1).findFirst().orElse(null);
+	}
+	
+	/**
 	 * Get a <tt>PlayerFaction</tt> by providing one of the Member's UUIDs
 	 * 
 	 * @param playerUuid - the UUID of the Player you wish to find a Faction for
@@ -119,6 +132,7 @@ public class FactionManager {
 		try {
 			uuid = UUIDGetter.getUUIDOf(name);
 		} catch (Exception e) {
+			Bukkit.getLogger().severe("Could not find the UUID of " + name);
 			e.printStackTrace();
 		}
 		if (uuid != null && getFactionByPlayer(uuid) != null) {

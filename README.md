@@ -1,5 +1,5 @@
 # ByteFactions
-The Hardcore Factions plugin built especially for ByteCore.
+The Hardcore Factions plugin built especially for ByteCore. This project will be updated only when I have time available to work on it and should be running in a stable state in who knows when. I work on many projects at a time and I spend most of my time learning programming aspects that don't go along with Minecraft. I also have work outside of Minecraft, so please don't spam me regarding this project.
 
 ## FAQ
 Frequently asked questions on the topic of this project.

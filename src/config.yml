@@ -1,0 +1,41 @@
+FACTION:
+  MAX_PLAYERS: 5
+  LENGTH:
+    MINIMUM: 3
+    MAXIMUM: 16
+  BLOCKED_NAMES:
+  - 'kohi'
+  - 'hcteams'
+  - 'prplz'
+  - 'joking'
+  - 'iluv'
+  - 'prplzsomuch'
+
+DTR:
+  STARTING: 1.1
+  MAXIMUM: 5.5
+  PLAYER_JOIN: 1.0
+  LOSS_ON_DEATH: 1.0
+  FREEZE_TIME: 1800
+  REGENERATION:
+    TIME: 10
+    INCREMENTATION: 0.1
+    
+ALLIES:
+  ENABLED: true
+  DAMAGE: true
+  MAXIMUM: 1
+  
+CLAIMS:
+  MAXIMUM: 2
+  WAND:
+    MATERIAL: 'GOLD_HOE'
+    DATA: 0
+    NAME: '&aClaiming Wand'
+    LORE:
+    - '&aLeft Click &fblock &efor Corner 1'
+    - '&bRight Click &fblock &efor Corner 2'
+    - ' '
+    - '&fRight Click &fair &eto claim selection'
+    - ' '
+    - '&cShift + Left Click &fair &eto cancel session'

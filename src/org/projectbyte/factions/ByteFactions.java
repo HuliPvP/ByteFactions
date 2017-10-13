@@ -1,6 +1,7 @@
 package org.projectbyte.factions;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import org.projectbyte.factions.config.DataFile;
 import org.projectbyte.factions.manager.ClaimManager;
 import org.projectbyte.factions.manager.FactionManager;
 import org.projectbyte.factions.util.commandapi.CommandFramework;
@@ -41,6 +42,9 @@ public class ByteFactions extends JavaPlugin {
 	
 	private CommandFramework commandFramework;
 	
+	private DataFile configFile;
+	private DataFile langFile;
+	
 	public void onEnable() {
 		
 		instance = this;
@@ -49,6 +53,9 @@ public class ByteFactions extends JavaPlugin {
 		claimManager = new ClaimManager();
 		
 		commandFramework = new CommandFramework(this);
+		
+		configFile = new DataFile(this, "config");
+		langFile = new DataFile(this, "lang");
 		
 	}
 

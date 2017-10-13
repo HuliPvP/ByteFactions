@@ -68,5 +68,5 @@ public @interface Command {
 	 * 
 	 * @return
 	 */
-	public boolean inGameOnly() default false;
+	public boolean playerOnly() default false;
 }

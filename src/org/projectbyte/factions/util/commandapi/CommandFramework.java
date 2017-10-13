@@ -91,7 +91,7 @@ public class CommandFramework implements CommandExecutor {
 					sender.sendMessage(command.noPerm());
 					return true;
 				}
-				if (command.inGameOnly() && !(sender instanceof Player)) {
+				if (command.playerOnly() && !(sender instanceof Player)) {
 					sender.sendMessage("This command is only performable in game");
 					return true;
 				}

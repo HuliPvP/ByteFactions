@@ -56,7 +56,7 @@ public class FactionManager {
 	}
 	
 	/**
-	 * Get a <tt>Faction</tt> by it's UUID
+	 * Get a {@link Faction} by it's UUID
 	 * 
 	 * @param id - the UUID of the Faction you wish to find
 	 * @return Faction - a Faction with the matching UUID as the one provided
@@ -66,7 +66,7 @@ public class FactionManager {
 	}
 	
 	/**
-	 * Get a <tt>Faction<tt> by it's name
+	 * Get a {@link Faction} by it's name
 	 * 
 	 * @param name - the Name of the Faction you wish to find
 	 * @return Faction - a Faction with the matching name as the one provided
@@ -76,7 +76,7 @@ public class FactionManager {
 	}
 	
 	/**
-	 * Get a <tt>Faction</tt> by searching for one of it's Claims
+	 * Get a {@link Faction} by searching for one of it's Claims
 	 * 
 	 * @param claim - the Claim of the Faction you wish to find
 	 * @return Faction - a Faction which contains the Claim provided in it's stored claims
@@ -86,7 +86,7 @@ public class FactionManager {
 	}
 	
 	/**
-	 * Get a <tt>Faction</tt> by searching if the provided location is inside one of
+	 * Get a by searching if the provided location is inside one of
 	 * Faction's claims
 	 * 
 	 * @param location - the Location of the Faction you wish to search for
@@ -97,7 +97,7 @@ public class FactionManager {
 	}
 	
 	/**
-	 * Get a <tt>PlayerFaction</tt> by providing one of the Member's UUIDs
+	 * Get a {@link PlayerFaction} by providing one of the Member's UUIDs
 	 * 
 	 * @param playerUuid - the UUID of the Player you wish to find a Faction for
 	 * @return PlayerFaction - a PlayerFaction which has a member stored with the same provided UUID
@@ -107,13 +107,23 @@ public class FactionManager {
 	}
 	
 	/**
-	 * Get a <tt>PlayerFaction</tt> by the leader of the Faction
+	 * Get a {@link PlayerFaction} by the leader of the Faction
 	 * 
 	 * @param leaderUuid - the UUID of the leader you wish to find
 	 * @return PlayerFaction - a PlayerFaction with the same leader UUID as the one provided
 	 */
 	public PlayerFaction getFactionByLeader(UUID leaderUuid) {
 		return getAllPlayerFactions().stream().filter(playerFaction -> playerFaction.getLeader() == leaderUuid).findFirst().orElse(null);
+	}
+	
+	/**
+	 * Get a {@link PlayerFaction}
+	 * 
+	 * @param uuid
+	 * @return
+	 */
+	public PlayerFaction getFactionByUuidString(String uuid) {
+		return getAllPlayerFactions().stream().filter(playerFaction -> playerFaction.getOnlinePlayers().stream().anyMatch(memberUuid -> memberUuid.toString().equalsIgnoreCase(uuid))).findFirst().orElse(null);
 	}
 	
 	/**
@@ -135,8 +145,8 @@ public class FactionManager {
 			Bukkit.getLogger().severe("Could not find the UUID of " + name);
 			e.printStackTrace();
 		}
-		if (uuid != null && getFactionByPlayer(uuid) != null) {
-			return getFactionByPlayer(uuid);
+		if (uuid != null && getFactionByUuidString(uuid.toString()) != null) {
+			return getFactionByUuidString(uuid.toString());
 		}
 		return null;
 	}

@@ -15,7 +15,7 @@ public class SystemFaction extends Faction {
 	private boolean deathBan;
 	
 	/**
-	 * Creates a new SystemFaction object with default values
+	 * Creates a new {@link SystemFaction} object with default values
 	 * 
 	 * @param id - the UUID of the Faction
 	 * @param name - the name of the Faction

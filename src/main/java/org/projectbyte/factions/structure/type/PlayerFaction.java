@@ -40,7 +40,7 @@ public class PlayerFaction extends Faction {
 	private double dtr, balance;
 
 	/**
-	 * Creates a default PlayerFaction with no values except the important ones
+	 * Creates a default {@link PlayerFaction} with no values except the important ones
 	 * 
 	 * @param id - the UUID of the Faction
 	 * @param leader - the UUID of the Player who created the Faction
@@ -86,10 +86,7 @@ public class PlayerFaction extends Faction {
 	 * @param message - the Message you wish to send to all the online players
 	 */
 	public void sendMessage(String message) {
-		this.getOnlinePlayers().stream().forEach(uuid -> {
-			Player player = Bukkit.getPlayer(uuid);
-			player.sendMessage(ChatColor.translateAlternateColorCodes('&', message));
-		});
+		this.getOnlinePlayers().stream().forEach(uuid -> Bukkit.getPlayer(uuid).sendMessage(ChatColor.translateAlternateColorCodes('&', message)));
 	}
 
 }

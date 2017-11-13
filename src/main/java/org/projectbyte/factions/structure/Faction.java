@@ -48,7 +48,7 @@ public abstract class Faction {
 	}
 	
 	/**
-	 * Creates a new Claim and then stores it to the Factions
+	 * Creates a new {@link Claim} and then stores it to the Factions
 	 * 
 	 * @param id - the UUID of the claim
 	 * @param cornerOne - the first corner Location of the Claim

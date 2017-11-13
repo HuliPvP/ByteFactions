@@ -34,14 +34,18 @@ import lombok.Getter;
 @Getter
 public class ByteFactions extends JavaPlugin {
 	
+	/* Please do not instantiate another instance */
 	@Getter
 	private static ByteFactions instance;
 	
+	/* Managers */
 	private FactionManager factionManager;
 	private ClaimManager claimManager;
 	
+	/* Commands  */
 	private CommandFramework commandFramework;
 	
+	/* Data files */
 	private DataFile configFile;
 	private DataFile langFile;
 	
@@ -56,6 +60,13 @@ public class ByteFactions extends JavaPlugin {
 		
 		configFile = new DataFile(this, "config");
 		langFile = new DataFile(this, "lang");
+		
+	}
+	
+	public void onDisable() {
+		
+		configFile.save();
+		langFile.save();
 		
 	}
 
